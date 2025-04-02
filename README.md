@@ -1,3 +1,17 @@
+# Workflow Automation Project
+
+## Table of Contents
+- Introduction
+- Features
+- Technologies Used
+- Setup and Installation
+- Usage
+- Code Structure
+- Contributing
+- Testing
+- License
+- 
+
 # **Workflow Automation Project**
 
 ## **Introduction**
@@ -16,8 +30,8 @@ This project automates the workflow process for managing medical condition submi
 ## **Technologies Used**
 - Java for backend logic.
 - JUnit 5 for unit testing.
-- Gradle (or Maven) for build automation.
-
+- Gradle/Maven for build automation.
+- Git for Version Control
 ---
 
 ## **Setup and Installation**
@@ -50,8 +64,27 @@ This project automates the workflow process for managing medical condition submi
    java -jar app.jar  # For a packaged JAR
 
 
+## **Code Structure** 
+src/
+├── main/
+│   ├── java/
+│   │   ├── domain/        # Domain object classes
+│   │   ├── forms/         # Form object classes
+│   │   └── utils/         # Utility classes
+│   └── resources/         # Configuration files
+├── test/
+│   └── java/
+│       ├── DomainObjectsTest.java  # Unit tests for domain objects
+│       └── FormObjectsTest.java    # Unit tests for form objects
+└── build.gradle / pom.xml          # Build configuration
 
+## **Testing**
+Run tests with:
+./gradlew test  # Gradle
+mvn test         # Maven
 
+## **License**
+This project is licensed under the MIT License
 
 
    
