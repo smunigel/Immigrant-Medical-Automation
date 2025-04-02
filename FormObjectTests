@@ -1,0 +1,44 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class FormObjectsTest {
+
+    @Test
+    public void testSubmittedPaperParsing() {
+        SubmittedPaper paper = new SubmittedPaper("P001", "2025-03-01");
+        paper.parseMedicalInfo();
+        assertEquals("P001", paper.paperID, "Paper ID should match.");
+    }
+
+    @Test
+    public void testValidationRequirementFields() {
+        String[] requiredFields = {"Name", "DOB"};
+        ValidationRequirement requirement = new ValidationRequirement("R001", requiredFields);
+        requirement.checkMissingFields();
+        assertEquals(2, requirement.requiredFields.length, "Validation requirement should have two fields.");
+    }
+
+    @Test
+    public void testDataEntrySubmission() {
+        String[] inputFields = {"Field1", "Field2"};
+        DataEntryScreen dataEntry = new DataEntryScreen("Screen001", inputFields);
+        dataEntry.submitFormData();
+        assertEquals(2, dataEntry.inputFields.length, "Data entry screen should have two input fields.");
+    }
+
+    @Test
+    public void testReviewScreenMarkReviewed() {
+        String[] reviewedFields = {"Field1", "Field2"};
+        ReviewScreen reviewScreen = new ReviewScreen("Screen002", reviewedFields);
+        reviewScreen.markAsReviewed();
+        assertEquals(2, reviewScreen.reviewedFields.length, "Review screen should have two reviewed fields.");
+    }
+
+    @Test
+    public void testApprovalScreenMarkApproved() {
+        String[] approvalFields = {"Field1", "Field2"};
+        ApprovalScreen approvalScreen = new ApprovalScreen("Screen003", approvalFields);
+        approvalScreen.markAsApproved();
+        assertEquals(2, approvalScreen.approvalFields.length, "Approval screen should have two approval fields.");
+    }
+}
