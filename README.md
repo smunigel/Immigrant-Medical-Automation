@@ -10,7 +10,6 @@
 - Contributing
 - Testing
 - License
-- 
 
 # **Workflow Automation Project**
 
